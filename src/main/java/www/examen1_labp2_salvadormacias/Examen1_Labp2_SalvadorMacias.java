@@ -153,4 +153,33 @@ public class Examen1_Labp2_SalvadorMacias {
 
     }//fin agregar enemigo
 
+    public static void listar_enemigos() {
+        for (int i = 0; i < lista_enemigo.size(); i++) {
+            System.out.println(
+                    lista_enemigo.indexOf(lista_enemigo.get(i)) + "-"
+                    + lista_enemigo.get(i)
+            );
+        }
+
+    }//fin listar enemigos
+
+    public static void listar_todos() {
+        System.out.println("---lista enemigos---");
+        for (int i = 0; i < lista_enemigo.size(); i++) {
+            System.out.println(
+                    lista_enemigo.indexOf(lista_enemigo.get(i)) + "-"
+                    + lista_enemigo.get(i)
+            );
+        }
+
+        System.out.println("\n\n---lista spidermen---");
+        for (int i = 0; i < lista_spidermen.size(); i++) {
+            System.out.println(
+                    lista_spidermen.indexOf(lista_spidermen.get(i)) + "-"
+                    + lista_spidermen.get(i)
+            );
+        }
+
+    }//fin listar todos
+
 }//fin clase
