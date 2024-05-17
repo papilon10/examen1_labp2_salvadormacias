@@ -197,10 +197,9 @@ public class Examen1_Labp2_SalvadorMacias {
             int indice = lea.nextInt();
             System.out.println("---menu de atributos a modificar---");
             System.out.println("1.nombre");
-            System.out.println("2.puntos de vida: ");
-            System.out.println("3.puntos de ataque");
-            System.out.println("4. nombre del universo");
-            System.out.println("5. salir del submenu: ");
+            System.out.println("2.puntos de ataque");
+            System.out.println("3. nombre del universo");
+            System.out.println("4. salir del submenu: ");
             int opc_mod = lea.nextInt();
             switch (opc_mod) {
                 case 1: {
@@ -213,23 +212,36 @@ public class Examen1_Labp2_SalvadorMacias {
 
                 break;
                 case 2: {
+                    System.out.println("Ingrese el los nuevos puntos de ataque: ");
+                    double hitpoints = lea.nextDouble();
+                    lista_spidermen.set(indice, hitpoints);
+                    System.out.println("puntos de ataque modificado exitosamente...");
 
                 }
                 break;
                 case 3: {
+                    System.out.println("Ingrese el nuevo nombre del universo: ");
+                    String universo = str.nextLine();
+                    lista_spidermen.set(indice, universo);
+                    System.out.println("nombre de universo modicado exitosamente...");
 
                 }
                 break;
                 case 4: {
+                    salida_mod = true;
+                    System.out.println("se saldra del submenu...");
 
                 }
                 break;
 
                 default:
-                    throw new AssertionError();
+                    System.out.println("opcion ingresada es invalida...");
             }
 
         } while (salida_mod != true);
-    }
+    }// fin modificar spiderman
+    
+    
+    
 
 }//fin clase
