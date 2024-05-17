@@ -8,6 +8,23 @@ package www.examen1_labp2_salvadormacias;
  *
  * @author Apple
  */
-public class alieligena {
-    
+public class alieligena extends personaje {
+
+    public alieligena() {
+    }
+
+    public alieligena(String nombre, double hp, double hitpoints, String universo) {
+        super(nombre, hp, hitpoints, universo);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "alieligena{" + '}';
+    }
+
+    @Override
+    public void ataque() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }
