@@ -57,7 +57,7 @@ public abstract class personaje {
         this.universo = universo;
     }
 
-    public abstract void ataque();
+    public abstract void ataque(double hitpoints);
 
     @Override
     public String toString() {

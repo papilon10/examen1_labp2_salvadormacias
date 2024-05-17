@@ -18,13 +18,14 @@ public class alieligena extends personaje {
     }
 
     @Override
-    public String toString() {
-        return super.toString() + "alieligena{" + '}';
+
+    public void ataque(double hitpoints) {
+        hitpoints *= 1.30;
+
     }
 
-    @Override
-    public void ataque() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public String toString() {
+        return super.toString() + "alieligena{" + '}';
     }
 
 }

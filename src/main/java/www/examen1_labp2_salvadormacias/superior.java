@@ -20,12 +20,14 @@ public class superior extends personaje {
     }
 
     @Override
-    public String toString() {
-        return super.toString() + "superior{" + '}';
+    public void ataque(double hitpoints) {
+        Random random = new Random();
+        int aleatorio = random.nextInt((int) 0.2) + 1;
+        hitpoints *= aleatorio;
     }
 
-    @Override
-    public void ataque() {
+    public String toString() {
+        return super.toString() + "superior{" + '}';
     }
 
 }

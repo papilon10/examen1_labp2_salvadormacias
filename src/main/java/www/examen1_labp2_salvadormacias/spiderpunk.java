@@ -18,13 +18,13 @@ public class spiderpunk extends personaje {
     }
 
     @Override
-    public String toString() {
-        return super.toString() + "spiderpunk{" + '}';
+
+    public void ataque(double hitpoints) {
+        hitpoints*=1.15;
     }
 
-    @Override
-    public void ataque() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public String toString() {
+        return super.toString() + "spiderpunk{" + '}';
     }
 
 }

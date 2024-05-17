@@ -18,13 +18,11 @@ public class alterado extends personaje {
     }
 
     @Override
+    public void ataque(double hitpoints) {
+        hitpoints*=1.10;
+    }
+
     public String toString() {
         return super.toString() + "alterado{" + '}';
     }
-
-    @Override
-    public void ataque() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
 }

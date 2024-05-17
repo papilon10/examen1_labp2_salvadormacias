@@ -4,6 +4,8 @@
 package www.examen1_labp2_salvadormacias;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -54,12 +56,12 @@ public class Examen1_Labp2_SalvadorMacias {
                 }
                 break;
                 case 5: {
-                    modificar_spiderman();
+                    modificar_spiderman(lista_spidermen);
 
                 }
                 break;
                 case 6: {
-                    modificar_enemigo();
+                    modificar_enemigo(lista_enemigo);
 
                 }
                 break;
@@ -109,7 +111,7 @@ public class Examen1_Labp2_SalvadorMacias {
                     System.out.println("Ingrese los puntos de ataque: ");
                     double hitpoints = lea.nextDouble();
                     System.out.println("Ingrese el nombre del universo: ");
-                    String universo = lea.nextLine();
+                    String universo = str.nextLine();
                     lista_spidermen.add(new clasico(nombre, hp, hitpoints, universo));
                     System.out.println("spiderman creado exitosamente...");
 
@@ -123,7 +125,7 @@ public class Examen1_Labp2_SalvadorMacias {
                     System.out.println("Ingrese los puntos de ataque: ");
                     double hitpoints = lea.nextDouble();
                     System.out.println("Ingrese el nombre del universo: ");
-                    String universo = lea.nextLine();
+                    String universo = str.nextLine();
                     lista_spidermen.add(new spiderpunk(nombre, hp, hitpoints, universo));
                     System.out.println("spiderman creado exitosamente...");
 
@@ -137,7 +139,7 @@ public class Examen1_Labp2_SalvadorMacias {
                     System.out.println("Ingrese los puntos de ataque: ");
                     double hitpoints = lea.nextDouble();
                     System.out.println("Ingrese el nombre del universo: ");
-                    String universo = lea.nextLine();
+                    String universo = str.nextLine();
                     lista_spidermen.add(new superior(nombre, hp, hitpoints, universo));
                     System.out.println("spiderman creado exitosamente...");
 
@@ -154,6 +156,9 @@ public class Examen1_Labp2_SalvadorMacias {
             }
 
         } while (menu_agg != true);
+
+        clasico juan = new clasico("juan", 9000, 450, "ultimate");
+        spiderpunk ramiro = new spiderpunk("ramiro", 0, 0, "616");
 
     }//fin agregar spiderman
 
@@ -175,7 +180,7 @@ public class Examen1_Labp2_SalvadorMacias {
                     System.out.println("Ingrese los puntos de ataque: ");
                     double hitpoints = lea.nextDouble();
                     System.out.println("Ingrese el nombre del universo: ");
-                    String universo = lea.nextLine();
+                    String universo = str.nextLine();
                     lista_enemigo.add(new alieligena(nombre, hp, hitpoints, universo));
                     System.out.println("enemigo creado exitosamente...");
                 }
@@ -189,7 +194,7 @@ public class Examen1_Labp2_SalvadorMacias {
                     System.out.println("Ingrese los puntos de ataque: ");
                     double hitpoints = lea.nextDouble();
                     System.out.println("Ingrese el nombre del universo: ");
-                    String universo = lea.nextLine();
+                    String universo = str.nextLine();
                     lista_enemigo.add(new alterado(nombre, hp, hitpoints, universo));
                     System.out.println("enemigo creado exitosamente...");
 
@@ -203,7 +208,7 @@ public class Examen1_Labp2_SalvadorMacias {
                     System.out.println("Ingrese los puntos de ataque: ");
                     double hitpoints = lea.nextDouble();
                     System.out.println("Ingrese el nombre del universo: ");
-                    String universo = lea.nextLine();
+                    String universo = str.nextLine();
                     lista_enemigo.add(new blindado(nombre, hp, hitpoints, universo));
                     System.out.println("enemigo creado exitosamente...");
 
@@ -252,7 +257,7 @@ public class Examen1_Labp2_SalvadorMacias {
 
     }//fin listar todos
 
-    public static void modificar_spiderman() {
+    public static void modificar_spiderman(ArrayList<personaje> lista_spidermen) {
         System.out.println("---modificar spiderman---");
         boolean salida_mod = false;
         do {
@@ -275,7 +280,7 @@ public class Examen1_Labp2_SalvadorMacias {
                 case 1: {
                     System.out.println("Ingrese el nuevo nombre del spiderman: ");
                     String nombre = str.nextLine();
-                    lista_spidermen.set(indice, nombre);
+                    lista_spidermen.get(indice).setNombre(nombre);
                     System.out.println("nombre modificado exitosamente...");
 
                 }
@@ -284,7 +289,7 @@ public class Examen1_Labp2_SalvadorMacias {
                 case 2: {
                     System.out.println("Ingrese el los nuevos puntos de ataque: ");
                     double hitpoints = lea.nextDouble();
-                    lista_spidermen.set(indice, hitpoints);
+                    lista_spidermen.get(indice).setHitpoints(hitpoints);
                     System.out.println("puntos de ataque modificado exitosamente...");
 
                 }
@@ -292,7 +297,7 @@ public class Examen1_Labp2_SalvadorMacias {
                 case 3: {
                     System.out.println("Ingrese el nuevo nombre del universo: ");
                     String universo = str.nextLine();
-                    lista_spidermen.set(indice, universo);
+                    lista_spidermen.get(indice).setUniverso(universo);
                     System.out.println("nombre de universo modicado exitosamente...");
 
                 }
@@ -311,7 +316,7 @@ public class Examen1_Labp2_SalvadorMacias {
         } while (salida_mod != true);
     }// fin modificar spiderman
 
-    public static void modificar_enemigo() {
+    public static void modificar_enemigo(ArrayList<personaje> lista_enemigo) {
         System.out.println("---modificar enemigo---");
         boolean salida_mod_enemigo = false;
         do {
@@ -334,7 +339,7 @@ public class Examen1_Labp2_SalvadorMacias {
                 case 1: {
                     System.out.println("Ingrese el nuevo nombre del spiderman: ");
                     String nombre = str.nextLine();
-                    lista_enemigo.set(indice, nombre);
+                    lista_enemigo.get(indice).setNombre(nombre);
                     System.out.println("nombre modificado exitosamente...");
 
                 }
@@ -343,7 +348,7 @@ public class Examen1_Labp2_SalvadorMacias {
                 case 2: {
                     System.out.println("Ingrese el los nuevos puntos de ataque: ");
                     double hitpoints = lea.nextDouble();
-                    lista_enemigo.set(indice, hitpoints);
+                    lista_enemigo.get(indice).setHitpoints(hitpoints);
                     System.out.println("puntos de ataque modificado exitosamente...");
 
                 }
@@ -351,7 +356,7 @@ public class Examen1_Labp2_SalvadorMacias {
                 case 3: {
                     System.out.println("Ingrese el nuevo nombre del universo: ");
                     String universo = str.nextLine();
-                    lista_enemigo.set(indice, universo);
+                    lista_enemigo.get(indice).setUniverso(universo);
                     System.out.println("nombre de universo modicado exitosamente...");
 
                 }
@@ -399,6 +404,9 @@ public class Examen1_Labp2_SalvadorMacias {
     }//fin eliminar enemigo
 
     public static void jugar() {
+        Collections.shuffle(lista_enemigo);
+        Collections.shuffle(lista_spidermen);
+        lista_enemigo.get(0);
 
     }
 
