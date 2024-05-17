@@ -182,4 +182,54 @@ public class Examen1_Labp2_SalvadorMacias {
 
     }//fin listar todos
 
+    public static void modificar_spiderman() {
+        System.out.println("---modificar spiderman---");
+        boolean salida_mod = false;
+        do {
+
+            for (int i = 0; i < lista_spidermen.size(); i++) {
+                System.out.println(
+                        lista_spidermen.indexOf(lista_spidermen.get(i)) + "-"
+                        + lista_spidermen.get(i)
+                );
+            }
+            System.out.println("Ingrese el indice del spiderman a modificar: ");
+            int indice = lea.nextInt();
+            System.out.println("---menu de atributos a modificar---");
+            System.out.println("1.nombre");
+            System.out.println("2.puntos de vida: ");
+            System.out.println("3.puntos de ataque");
+            System.out.println("4. nombre del universo");
+            System.out.println("5. salir del submenu: ");
+            int opc_mod = lea.nextInt();
+            switch (opc_mod) {
+                case 1: {
+                    System.out.println("Ingrese el nuevo nombre del spiderman: ");
+                    String nombre = str.nextLine();
+                    lista_spidermen.set(indice, nombre);
+                    System.out.println("nombre modificado exitosamente...");
+
+                }
+
+                break;
+                case 2: {
+
+                }
+                break;
+                case 3: {
+
+                }
+                break;
+                case 4: {
+
+                }
+                break;
+
+                default:
+                    throw new AssertionError();
+            }
+
+        } while (salida_mod != true);
+    }
+
 }//fin clase
