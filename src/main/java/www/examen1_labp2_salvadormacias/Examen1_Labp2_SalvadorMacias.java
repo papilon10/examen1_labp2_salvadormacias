@@ -4,7 +4,7 @@
 package www.examen1_labp2_salvadormacias;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Random;
 import java.util.Collections;
 import java.util.Scanner;
 
@@ -76,7 +76,7 @@ public class Examen1_Labp2_SalvadorMacias {
                 }
                 break;
                 case 9: {
-                    jugar();
+                    jugar(lista_enemigo,lista_spidermen);
                 }
                 break;
 
@@ -106,8 +106,9 @@ public class Examen1_Labp2_SalvadorMacias {
                 case 1: {
                     System.out.println("Ingrese el nombre: ");
                     String nombre = str.nextLine();
-                    System.out.println("Ingrese los puntos de vida: ");
-                    double hp = lea.nextDouble();
+                    Random random = new Random();
+                    int aleatorio = random.nextInt(401) + 200;
+                    double hp = aleatorio;
                     System.out.println("Ingrese los puntos de ataque: ");
                     double hitpoints = lea.nextDouble();
                     System.out.println("Ingrese el nombre del universo: ");
@@ -120,8 +121,9 @@ public class Examen1_Labp2_SalvadorMacias {
                 case 2: {
                     System.out.println("Ingrese el nombre: ");
                     String nombre = str.nextLine();
-                    System.out.println("Ingrese los puntos de vida: ");
-                    double hp = lea.nextDouble();
+                    Random random = new Random();
+                    int aleatorio = random.nextInt(401) + 200;
+                    double hp = aleatorio;
                     System.out.println("Ingrese los puntos de ataque: ");
                     double hitpoints = lea.nextDouble();
                     System.out.println("Ingrese el nombre del universo: ");
@@ -134,8 +136,9 @@ public class Examen1_Labp2_SalvadorMacias {
                 case 3: {
                     System.out.println("Ingrese el nombre: ");
                     String nombre = str.nextLine();
-                    System.out.println("Ingrese los puntos de vida: ");
-                    double hp = lea.nextDouble();
+                    Random random = new Random();
+                    int aleatorio = random.nextInt(401) + 200;
+                    double hp = aleatorio;
                     System.out.println("Ingrese los puntos de ataque: ");
                     double hitpoints = lea.nextDouble();
                     System.out.println("Ingrese el nombre del universo: ");
@@ -158,7 +161,8 @@ public class Examen1_Labp2_SalvadorMacias {
         } while (menu_agg != true);
 
         clasico juan = new clasico("juan", 9000, 450, "ultimate");
-        spiderpunk ramiro = new spiderpunk("ramiro", 0, 0, "616");
+        spiderpunk ramiro = new spiderpunk("ramiro", 944, 260, "616");
+        superior goku = new superior("goku", 440, 440, "ultimate");
 
     }//fin agregar spiderman
 
@@ -175,8 +179,9 @@ public class Examen1_Labp2_SalvadorMacias {
                 case 1: {
                     System.out.println("Ingrese el nombre: ");
                     String nombre = str.nextLine();
-                    System.out.println("Ingrese los puntos de vida: ");
-                    double hp = lea.nextDouble();
+                    Random random = new Random();
+                    int aleatorio = random.nextInt(401) + 200;
+                    double hp = aleatorio;
                     System.out.println("Ingrese los puntos de ataque: ");
                     double hitpoints = lea.nextDouble();
                     System.out.println("Ingrese el nombre del universo: ");
@@ -189,8 +194,9 @@ public class Examen1_Labp2_SalvadorMacias {
                 case 2: {
                     System.out.println("Ingrese el nombre: ");
                     String nombre = str.nextLine();
-                    System.out.println("Ingrese los puntos de vida: ");
-                    double hp = lea.nextDouble();
+                    Random random = new Random();
+                    int aleatorio = random.nextInt(401) + 200;
+                    double hp = aleatorio;
                     System.out.println("Ingrese los puntos de ataque: ");
                     double hitpoints = lea.nextDouble();
                     System.out.println("Ingrese el nombre del universo: ");
@@ -203,8 +209,9 @@ public class Examen1_Labp2_SalvadorMacias {
                 case 3: {
                     System.out.println("Ingrese el nombre: ");
                     String nombre = str.nextLine();
-                    System.out.println("Ingrese los puntos de vida: ");
-                    double hp = lea.nextDouble();
+                    Random random = new Random();
+                    int aleatorio = random.nextInt(401) + 200;
+                    double hp = aleatorio;
                     System.out.println("Ingrese los puntos de ataque: ");
                     double hitpoints = lea.nextDouble();
                     System.out.println("Ingrese el nombre del universo: ");
@@ -403,10 +410,25 @@ public class Examen1_Labp2_SalvadorMacias {
 
     }//fin eliminar enemigo
 
-    public static void jugar() {
-        Collections.shuffle(lista_enemigo);
-        Collections.shuffle(lista_spidermen);
-        lista_enemigo.get(0);
+    public static void jugar(ArrayList<personaje> lista_spidermen, ArrayList<personaje> lista_enemigo) {
+       /* if (lista_enemigo.size() == lista_enemigo.size()) {
+            Collections.shuffle(lista_enemigo);
+            Collections.shuffle(lista_spidermen);
+            for (personaje object : lista_enemigo) {
+                double x = lista_enemigo.get(lista_enemigo.get(object)).getHitpoints();
+                double y = lista_spidermen.get(0).getHp();
+                double vida_x = x - y;
+            }
+            for (personaje object : lista_enemigo) {
+                double x = lista_enemigo.get(lista_enemigo.get(object)).getHitpoints();
+                double y = lista_spidermen.get(0).getHp();
+                double vida_y = y - x;
+            }
+
+        } else {
+
+            System.out.println("las listas deben tener la misma cantidad de personajes");
+        }*/
 
     }
 

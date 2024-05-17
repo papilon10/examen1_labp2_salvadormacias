@@ -8,6 +8,8 @@ package www.examen1_labp2_salvadormacias;
  *
  * @author Apple
  */
+import java.util.Random;
+
 public abstract class personaje {
 
     private String nombre;
