@@ -18,6 +18,76 @@ public class Examen1_Labp2_SalvadorMacias {
     public static ArrayList lista_enemigo = new ArrayList();
 
     public static void main(String[] args) {
+        System.out.println("---menu principal---");
+        boolean salida = false;
+        do {
+            System.out.println("1. agregar spiderman");
+            System.out.println("2. agregar enemigo");
+            System.out.println("3. listar enemigos");
+            System.out.println("4. listar todos");
+            System.out.println("5. modificar spiderman");
+            System.out.println("6. modificar enemigo");
+            System.out.println("7. eliminar spiderman");
+            System.out.println("8. eliminar enemigo");
+            System.out.println("9. jugar");
+            System.out.println("10. salir");
+            int opc = lea.nextInt();
+            switch (opc) {
+                case 1: {
+                    agregar_spiderman();
+                }
+
+                break;
+                case 2: {
+                    agregar_enemigo();
+
+                }
+                break;
+                case 3: {
+                    listar_enemigos();
+
+                }
+                break;
+                case 4: {
+                    listar_todos();
+
+                }
+                break;
+                case 5: {
+                    modificar_spiderman();
+
+                }
+                break;
+                case 6: {
+                    modificar_enemigo();
+
+                }
+                break;
+                case 7: {
+                    eliminar_spiderman();
+
+                }
+                break;
+                case 8: {
+                    eliminar_enemigo();
+
+                }
+                break;
+                case 9: {
+                    jugar();
+                }
+                break;
+
+                case 10: {
+                    salida = true;
+                    System.out.println("se abandonara el programa...");
+                }
+                break;
+                default:
+                    System.out.println("opcion ingresada es invalida...");
+            }
+
+        } while (salida != true);
 
     }//fin main
 
@@ -240,8 +310,96 @@ public class Examen1_Labp2_SalvadorMacias {
 
         } while (salida_mod != true);
     }// fin modificar spiderman
-    
-    
-    
+
+    public static void modificar_enemigo() {
+        System.out.println("---modificar enemigo---");
+        boolean salida_mod_enemigo = false;
+        do {
+
+            for (int i = 0; i < lista_enemigo.size(); i++) {
+                System.out.println(
+                        lista_enemigo.indexOf(lista_enemigo.get(i)) + "-"
+                        + lista_enemigo.get(i)
+                );
+            }
+            System.out.println("Ingrese el indice del enemigo a modificar: ");
+            int indice = lea.nextInt();
+            System.out.println("---menu de atributos a modificar---");
+            System.out.println("1.nombre");
+            System.out.println("2.puntos de ataque");
+            System.out.println("3. nombre del universo");
+            System.out.println("4. salir del submenu: ");
+            int opc_mod_enemigo = lea.nextInt();
+            switch (opc_mod_enemigo) {
+                case 1: {
+                    System.out.println("Ingrese el nuevo nombre del spiderman: ");
+                    String nombre = str.nextLine();
+                    lista_enemigo.set(indice, nombre);
+                    System.out.println("nombre modificado exitosamente...");
+
+                }
+
+                break;
+                case 2: {
+                    System.out.println("Ingrese el los nuevos puntos de ataque: ");
+                    double hitpoints = lea.nextDouble();
+                    lista_enemigo.set(indice, hitpoints);
+                    System.out.println("puntos de ataque modificado exitosamente...");
+
+                }
+                break;
+                case 3: {
+                    System.out.println("Ingrese el nuevo nombre del universo: ");
+                    String universo = str.nextLine();
+                    lista_enemigo.set(indice, universo);
+                    System.out.println("nombre de universo modicado exitosamente...");
+
+                }
+                break;
+                case 4: {
+                    salida_mod_enemigo = true;
+                    System.out.println("se saldra del submenu...");
+
+                }
+                break;
+
+                default:
+                    System.out.println("opcion ingresada es invalida...");
+            }
+
+        } while (salida_mod_enemigo != true);
+    }//fin mod enemigo
+
+    public static void eliminar_spiderman() {
+        for (int i = 0; i < lista_spidermen.size(); i++) {
+            System.out.println(
+                    lista_spidermen.indexOf(lista_spidermen.get(i)) + "-"
+                    + lista_spidermen.get(i)
+            );
+        }
+        System.out.println("Ingrese el indice del enemigo a eliminar: ");
+        int indice = lea.nextInt();
+        lista_spidermen.remove(indice);
+        System.out.println("el spiderman fue eliminado exitosamente...");
+
+    }//fin eliminar spiderman
+
+    public static void eliminar_enemigo() {
+        for (int i = 0; i < lista_enemigo.size(); i++) {
+            System.out.println(
+                    lista_enemigo.indexOf(lista_enemigo.get(i)) + "-"
+                    + lista_enemigo.get(i)
+            );
+        }
+        System.out.println("Ingrese el indice del enemigo a eliminar: ");
+        int indice = lea.nextInt();
+        lista_enemigo.remove(indice);
+        System.out.println("el enemigo fue eliminado exitosamente...");
+
+    }//fin eliminar enemigo
+
+    public static void jugar() {
+
+    }
 
 }//fin clase
